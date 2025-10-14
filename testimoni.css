@@ -1,0 +1,334 @@
+/**
+ * Reset dan Font
+ *
+ * @format
+ */
+
+/* 🎨 Variabel Warna (Skema Cokelat Tua & Emas Profesional) - DIKEMBALIKAN KE VERSI AWAL */
+:root {
+  --primary-color: #4a2b1d; /* Cokelat Espresso (Dominan & Profesional) */
+  --secondary-color: #7b5a40; /* Cokelat Karamel (Aksen) */
+  --accent-color: #f5f5dc; /* Krem Murni/Linen (Hover/Highlight/Base) - DIGANTI agar lebih netral dan kontras */
+  --light-bg: #ffffff;
+  --soft-bg: #fafafa; /* Latar belakang Off-White Lembut */
+  --text-color: #333333; /* Abu-abu Gelap (Teks Utama) */
+  --highlight-color: #b8860b; /* Emas Tua (Aksen/Link) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out; /* Global transition for smooth effects */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color); /* Teks utama menggunakan warna standar */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🔝 Header - DISESUAIKAN DENGAN SKEMA AWAL */
+header {
+  background-color: var(--primary-color); /* Cokelat Espresso Dominan */
+  color: var(--accent-color); /* Teks Krem untuk kontras */
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color); /* Warna Krem agar kontras dengan Header gelap */
+}
+
+.logo:hover {
+  color: var(--secondary-color); /* Cokelat Karamel saat hover */
+  transform: scale(1.02);
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Penyesuaian Brand Colors - DISESUAIKAN DENGAN SKEMA AWAL */
+.brand1 {
+  color: var(--highlight-color); /* Emas Tua */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.brand {
+  color: var(--secondary-color); /* Cokelat Karamel */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/* 🔗 Navigasi - DISESUAIKAN DENGAN SKEMA AWAL */
+nav {
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--accent-color); /* Warna Krem/Linen untuk kontras */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+  background-color: var(
+    --secondary-color
+  ); /* Latar belakang coklat karamel saat hover */
+  color: var(--light-bg); /* Teks putih saat hover */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-links li a.active,
+.nav-slide a.active {
+  background-color: var(--highlight-color); /* Emas Tua untuk link aktif */
+  color: var(--light-bg); /* Teks Putih */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 🍔 Hamburger Menu - DISESUAIKAN DENGAN SKEMA AWAL */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 2001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(
+    --accent-color
+  ); /* Warna Krem agar kontras dengan Header gelap */
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* 🍌 Slide Menu Mobile - DISESUAIKAN DENGAN SKEMA AWAL */
+.nav-slide {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 60%;
+  height: 100vh;
+  background-color: var(--soft-bg); /* Latar belakang lembut */
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  transition: right 0.4s ease;
+  z-index: 2000;
+}
+
+.nav-slide.active {
+  right: 0;
+}
+
+.nav-slide li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.nav-slide a {
+  color: var(--text-color); /* Teks utama */
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-slide a:hover {
+  background-color: var(--primary-color); /* Cokelat Espresso saat hover */
+  color: var(--accent-color); /* Teks Krem saat hover */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 💬 Testimoni Section - DISESUAIKAN DENGAN SKEMA AWAL */
+#testimoni {
+  background-color: var(
+    --soft-bg
+  ); /* Menggunakan soft-bg untuk latar lebih halus */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimoni-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.testimoni-card {
+  background-color: var(--light-bg); /* Putih */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimoni-card:hover {
+  transform: scale(1.03);
+}
+
+.testimoni-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.testimoni-card p {
+  font-size: 0.95rem;
+  color: var(--text-color); /* Teks utama */
+  margin-bottom: 10px;
+}
+
+.testimoni-card span {
+  font-size: 0.85rem;
+  color: var(--secondary-color); /* Cokelat Karamel untuk nama/detail */
+}
+
+/* 🧱 Footer - DISESUAIKAN DENGAN SKEMA AWAL */
+footer {
+  background-color: var(--primary-color); /* Cokelat Espresso */
+  color: var(--accent-color); /* Teks Krem untuk kontras */
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-container > div {
+  margin-bottom: 10px;
+}
+
+.footer-info a {
+  text-decoration: none;
+  color: var(--highlight-color); /* Link Emas Tua */
+}
+
+.footer-info a:hover {
+  background-color: var(--secondary-color);
+  color: var(--light-bg);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.footer-brand h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: var(--secondary-color);
+}
+
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact ul li a {
+  color: var(--accent-color); /* Link Krem/Linen */
+  text-decoration: none;
+}
+
+.footer-contact ul li a:hover {
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  color: var(--light-bg);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: var(
+    --secondary-color
+  ); /* Warna Karamel agar terlihat di Footer gelap */
+}
+
+/* 💻 Responsive */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-slide {
+    display: flex;
+  }
+}
+
+@media (min-width: 601px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-slide {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-container > div {
+    flex: 1;
+    margin-bottom: 0;
+    max-width: 300px;
+  }
+}

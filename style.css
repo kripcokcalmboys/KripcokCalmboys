@@ -1,0 +1,737 @@
+/** @format */
+
+/* 🎨 Variabel Warna (Skema Cokelat Tua & Emas Profesional) */
+:root {
+  --primary-color: #4a2b1d; /* Cokelat Espresso (Dominan & Profesional) */
+  --secondary-color: #7b5a40; /* Cokelat Karamel (Aksen) */
+  --accent-color: #f5f5dc; /* Krem Murni/Linen (DIUBAH untuk kontras optimal) */
+  --light-bg: #ffffff;
+  --soft-bg: #fafafa; /* Latar belakang Off-White Lembut */
+  --text-color: #333333; /* Abu-abu Gelap (Teks Utama) */
+  --highlight-color: #b8860b; /* Emas Tua (Aksen/Link) */
+}
+
+/* 🌐 Reset dan Global - TIDAK ADA PERUBAHAN */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-color);
+}
+
+/* 🔝 Header - DIUBAH (Warna Dominan) */
+header {
+  background-color: var(--primary-color); /* Cokelat Espresso (Gelap) */
+  color: var(--accent-color); /* Teks Krem untuk kontras */
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Bayangan lebih tegas */
+}
+
+/* Slogan - DIJAGA (Gradien Cokelat Gelap yang Sudah Baik) */
+.slogan {
+  background: linear-gradient(145deg, #a0522d 0%, #7b3f00 100%);
+  padding: 30px 25px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  margin: 30px auto;
+  max-width: 650px;
+  font-family: "Montserrat", sans-serif;
+  color: #ffdab9; /* Warna terang untuk kontras */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slogan h2 {
+  font-family: "Lobster Two", cursive;
+  font-size: 2.8em;
+  color: #ffffff; /* Putih bersih */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slogan p {
+  font-size: 1.3em;
+  line-height: 1.6;
+  color: #ffdab9;
+}
+
+/* Animasi Slogan - TIDAK ADA PERUBAHAN */
+.slogan::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  animation: rotateLight 15s linear infinite;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+@keyframes rotateLight {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.slogan:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color); /* Warna Krem agar kontras dengan Header gelap */
+}
+
+.logo:hover {
+  color: var(--secondary-color); /* Cokelat Karamel saat hover */
+  transform: scale(1.02);
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Penyesuaian Brand Colors - DIUBAH MENGGUNAKAN VARIABEL */
+.brand1 {
+  color: var(--highlight-color); /* Emas Tua */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.brand {
+  color: var(--secondary-color); /* Cokelat Karamel */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/* 🔗 Navigasi - DIUBAH */
+nav {
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: var(--accent-color); /* Warna Krem/Linen untuk kontras */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links li a:hover {
+  background-color: var(
+    --secondary-color
+  ); /* Cokelat Karamel sebagai latar hover */
+  color: var(--light-bg); /* Teks Putih */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 🍔 Hamburger - DIUBAH */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 2001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(
+    --accent-color
+  ); /* Warna Krem agar terlihat di Header gelap */
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* 🍌 Slide Menu Mobile - DIUBAH */
+.nav-slide {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 60%;
+  height: 100vh;
+  background-color: var(--soft-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  z-index: 2000;
+}
+
+.nav-slide.active {
+  right: 0;
+}
+
+.nav-slide li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.nav-slide a {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-slide a:hover {
+  background-color: var(--primary-color); /* Cokelat Espresso saat hover */
+  color: var(--accent-color); /* Teks Krem saat hover */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* 🖼️ Hero Section - TIDAK ADA PERUBAHAN */
+#hero {
+  background: linear-gradient(145deg, #a0522d 0%, #7b3f00 100%);
+  padding: 40px 30px;
+  margin: 50px auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-size: 1.15rem;
+  color: #ffdab9;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.7;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+#hero h1,
+#hero h2 {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+#hero:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background-color: #ffdab9;
+  border-radius: 5px;
+  animation: pulseBorder 3s infinite alternate;
+}
+
+@keyframes pulseBorder {
+  from {
+    opacity: 0.5;
+    transform: scaleX(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+/* 📦 Section Umum - TIDAK ADA PERUBAHAN */
+#produk,
+#tentang,
+#kontak {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: var(--light-bg);
+  border-bottom: 1px solid #eee;
+}
+
+/* 🧃 Produk - DIUBAH */
+.produk-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.produk-card {
+  background-color: var(--soft-bg);
+  border: 1px solid var(--secondary-color); /* Border Karamel */
+  border-radius: 10px;
+  width: 220px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.produk-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) scale(1.02);
+}
+
+.produk-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.produk-card button {
+  background-color: var(--primary-color);
+  color: var(--light-bg); /* Teks Putih */
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.produk-card button:hover {
+  background-color: var(--highlight-color); /* Emas Tua saat hover */
+  transform: scale(1.08);
+}
+
+#tentang {
+  background: linear-gradient(145deg, #a0522d 0%, #7b3f00 100%);
+  padding: 40px 30px;
+  margin: 50px auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-size: 1.15rem;
+  color: #ffdab9;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.7;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+#tentang h2,
+#tentang p {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+#tentang:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+#tentang::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background-color: #ffdab9;
+  border-radius: 5px;
+  animation: pulseBorder 3s infinite alternate;
+}
+
+/* 📱 Kontak - PENAMBAHAN HOVER UNTUK LINK */
+#kontak {
+  background: linear-gradient(145deg, #a0522d 0%, #7b3f00 100%);
+  padding: 40px 30px;
+  margin: 50px auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  font-size: 1.15rem;
+  color: #ffdab9;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.7;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+#kontak h2,
+#kontak p {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+/* Base Link Color */
+#kontak h2,
+#kontak p,
+#kontak a {
+  color: var(
+    --accent-color
+  ); /* Warna Krem/Linen untuk kontras dengan latar gelap */
+  text-decoration: none;
+}
+.kontak h2,
+.kontak p,
+.kontak a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Hover/Click Link Color */
+#kontak a:hover,
+#kontak a:active {
+  color: var(--highlight-color); /* Emas Tua saat di-hover/klik */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Latar belakang transparan lembut */
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+#kontak:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+#kontak::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background-color: #ffdab9;
+  border-radius: 5px;
+  animation: pulseBorder 3s infinite alternate;
+}
+
+/* 🖼️ Galeri Foto - CONTAINER UTAMA */
+.galeri-foto {
+  padding: 30px 20px; /* Kembali ke padding standar untuk memberi ruang */
+  background-color: var(--soft-bg); /* Latar belakang lembut */
+}
+
+/* WADAH SLIDER BARU: Untuk posisi tombol relatif terhadap galeri */
+.slider-container {
+  position: relative;
+  max-width: 900px; /* Batasan lebar di desktop */
+  margin: 0 auto;
+  /* MENGURANGI TINGGI: Hanya 50% dari ketinggian viewport */
+  height: 50vh;
+  border-radius: 10px; /* Tambahkan border radius agar terlihat seperti modul */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* STYLING TOMBOL NAVIGASI */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  background-color: rgba(74, 43, 29, 0.7); /* Primary color semi-transparan */
+  color: var(--accent-color);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+
+.nav-btn:hover {
+  background-color: var(--primary-color);
+  opacity: 1;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* FOTO WRAPPER: Scroll Container */
+.foto-wrapper {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 0;
+
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%; /* Mengambil 100% tinggi slider-container (50vh) */
+  /* Padding untuk memastikan gambar terpusat */
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* GAMBAR DI DALAM WRAPPER: Responsif, Tidak Terpotong, dan di Tengah */
+.foto-wrapper img {
+  flex-shrink: 0;
+  width: 90%;
+  height: 100%; /* Mengambil 100% tinggi dari wadah */
+
+  /* PENTING: Memastikan gambar terlihat SELURUHNYA (tidak terpotong) */
+  object-fit: contain;
+
+  /* Scroll Snap */
+  scroll-snap-align: center;
+
+  /* Gaya dan Margin */
+  border: 5px solid var(--accent-color);
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--secondary-color);
+  transition: all 0.3s ease-in-out;
+  margin: 0 5%;
+  background-color: var(
+    --light-bg
+  ); /* Latar belakang gambar agar object-fit: contain terlihat rapi */
+}
+
+.foto-wrapper img:hover {
+  box-shadow: 0 0 25px var(--highlight-color), 0 0 40px var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Menyembunyikan selector lama yang tidak relevan */
+.foto-galeri {
+  display: none;
+}
+
+/* 📝 Deskripsi Produk - DIUBAH (List Item) */
+.deskripsi-produk {
+  background-color: var(--soft-bg);
+  padding: 20px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: center;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.deskripsi-produk h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.deskripsi-produk ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+/* List Deskripsi Produk */
+.deskripsi-produk li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: var(--accent-color); /* Latar belakang Krem/Linen */
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  color: var(--text-color); /* Teks gelap di latar terang */
+}
+
+/* 🧱 Footer - DIUBAH (Warna Dominan) */
+footer {
+  background-color: var(--primary-color); /* Cokelat Espresso */
+  color: var(--accent-color); /* Teks Krem untuk kontras */
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-container > div {
+  margin-bottom: 10px;
+}
+
+.footer-info a {
+  text-decoration: none;
+  color: var(--highlight-color); /* Link Emas Tua */
+}
+
+.footer-info a:hover {
+  background-color: var(--secondary-color);
+  color: var(--light-bg);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.footer-brand h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  color: var(--secondary-color);
+}
+
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact ul li a {
+  color: var(--accent-color); /* Link Krem/Linen */
+  text-decoration: none;
+}
+
+.footer-contact ul li a:hover {
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  color: var(--light-bg);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: var(
+    --secondary-color
+  ); /* Warna Karamel agar terlihat di Footer gelap */
+}
+
+/* 💻 Footer Horizontal di Tablet & Laptop - TIDAK ADA PERUBAHAN */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer-container > div {
+    flex: 1;
+    margin-bottom: 0;
+    max-width: 300px;
+  }
+}
+
+/* 📱 Mobile Only - DIUBAH agar foto responsif penuh */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-slide {
+    display: flex;
+  }
+
+  .produk-card,
+  .foto-galeri {
+    width: 100%;
+  }
+  .deskripsi-produk {
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 90%;
+    font-size: 0.95rem;
+  }
+
+  .deskripsi-produk li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 10px;
+    color: var(--text-color); /* Memastikan keterbacaan di latar Krem */
+  }
+
+  .deskripsi-produk li::before {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 15px auto;
+  }
+}
+
+/* Tablet & Desktop - TIDAK ADA PERUBAHAN */
+@media (min-width: 601px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-slide {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}
+
+/* ✨ Animasi Masuk - TIDAK ADA PERUBAHAN */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
